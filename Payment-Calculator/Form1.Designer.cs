@@ -33,14 +33,14 @@
             startdateTimePicker1 = new DateTimePicker();
             finishTimePicker2 = new DateTimePicker();
             calculateHoursbutton1 = new Button();
-            groupBox1 = new GroupBox();
+            payInformationgroupBox1 = new GroupBox();
             hoursWorkedlabel1 = new Label();
             breakslabel1 = new Label();
             grossPaylabel1 = new Label();
             hoursWorkedlabel2 = new Label();
             breakslabel2 = new Label();
             grossPaylabel2 = new Label();
-            groupBox1.SuspendLayout();
+            payInformationgroupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // startTimeLabel
@@ -88,21 +88,21 @@
             calculateHoursbutton1.Text = "Calculate Hours";
             calculateHoursbutton1.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
+            // payInformationgroupBox1
             // 
-            groupBox1.Controls.Add(grossPaylabel2);
-            groupBox1.Controls.Add(breakslabel2);
-            groupBox1.Controls.Add(hoursWorkedlabel2);
-            groupBox1.Controls.Add(grossPaylabel1);
-            groupBox1.Controls.Add(breakslabel1);
-            groupBox1.Controls.Add(hoursWorkedlabel1);
-            groupBox1.Location = new Point(93, 161);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(200, 106);
-            groupBox1.TabIndex = 7;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "groupBox1";
-            groupBox1.Enter += groupBox1_Enter;
+            payInformationgroupBox1.Controls.Add(grossPaylabel2);
+            payInformationgroupBox1.Controls.Add(breakslabel2);
+            payInformationgroupBox1.Controls.Add(hoursWorkedlabel2);
+            payInformationgroupBox1.Controls.Add(grossPaylabel1);
+            payInformationgroupBox1.Controls.Add(breakslabel1);
+            payInformationgroupBox1.Controls.Add(hoursWorkedlabel1);
+            payInformationgroupBox1.Location = new Point(93, 161);
+            payInformationgroupBox1.Name = "payInformationgroupBox1";
+            payInformationgroupBox1.Size = new Size(200, 106);
+            payInformationgroupBox1.TabIndex = 7;
+            payInformationgroupBox1.TabStop = false;
+            payInformationgroupBox1.Text = "Pay Information";
+            payInformationgroupBox1.Enter += groupBox1_Enter;
             // 
             // hoursWorkedlabel1
             // 
@@ -163,7 +163,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(441, 456);
-            Controls.Add(groupBox1);
+            Controls.Add(payInformationgroupBox1);
             Controls.Add(calculateHoursbutton1);
             Controls.Add(finishTimePicker2);
             Controls.Add(startdateTimePicker1);
@@ -171,8 +171,8 @@
             Controls.Add(startTimeLabel);
             Name = "Form1";
             Text = "Form1";
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
+            payInformationgroupBox1.ResumeLayout(false);
+            payInformationgroupBox1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -184,7 +184,7 @@
         private DateTimePicker startdateTimePicker1;
         private DateTimePicker finishTimePicker2;
         private Button calculateHoursbutton1;
-        private GroupBox groupBox1;
+        private GroupBox payInformationgroupBox1;
         private Label grossPaylabel2;
         private Label breakslabel2;
         private Label hoursWorkedlabel2;

@@ -34,12 +34,12 @@
             finishTimePicker2 = new DateTimePicker();
             calculateHoursbutton1 = new Button();
             payInformationgroupBox1 = new GroupBox();
-            hoursWorkedlabel1 = new Label();
-            breakslabel1 = new Label();
-            grossPaylabel1 = new Label();
-            hoursWorkedlabel2 = new Label();
-            breakslabel2 = new Label();
             grossPaylabel2 = new Label();
+            breakslabel2 = new Label();
+            hoursWorkedlabel2 = new Label();
+            grossPaylabel1 = new Label();
+            breakslabel1 = new Label();
+            hoursWorkedlabel1 = new Label();
             payInformationgroupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -87,6 +87,7 @@
             calculateHoursbutton1.TabIndex = 6;
             calculateHoursbutton1.Text = "Calculate Hours";
             calculateHoursbutton1.UseVisualStyleBackColor = true;
+            calculateHoursbutton1.Click += calculate_Hours;
             // 
             // payInformationgroupBox1
             // 
@@ -104,41 +105,14 @@
             payInformationgroupBox1.Text = "Pay Information";
             payInformationgroupBox1.Enter += groupBox1_Enter;
             // 
-            // hoursWorkedlabel1
+            // grossPaylabel2
             // 
-            hoursWorkedlabel1.AutoSize = true;
-            hoursWorkedlabel1.Location = new Point(6, 19);
-            hoursWorkedlabel1.Name = "hoursWorkedlabel1";
-            hoursWorkedlabel1.Size = new Size(89, 15);
-            hoursWorkedlabel1.TabIndex = 0;
-            hoursWorkedlabel1.Text = "Hours Worked: ";
-            // 
-            // breakslabel1
-            // 
-            breakslabel1.AutoSize = true;
-            breakslabel1.Location = new Point(6, 43);
-            breakslabel1.Name = "breakslabel1";
-            breakslabel1.Size = new Size(47, 15);
-            breakslabel1.TabIndex = 1;
-            breakslabel1.Text = "Breaks: ";
-            // 
-            // grossPaylabel1
-            // 
-            grossPaylabel1.AutoSize = true;
-            grossPaylabel1.Location = new Point(6, 68);
-            grossPaylabel1.Name = "grossPaylabel1";
-            grossPaylabel1.Size = new Size(64, 15);
-            grossPaylabel1.TabIndex = 2;
-            grossPaylabel1.Text = "Gross Pay: ";
-            // 
-            // hoursWorkedlabel2
-            // 
-            hoursWorkedlabel2.AutoSize = true;
-            hoursWorkedlabel2.Location = new Point(101, 19);
-            hoursWorkedlabel2.Name = "hoursWorkedlabel2";
-            hoursWorkedlabel2.Size = new Size(28, 15);
-            hoursWorkedlabel2.TabIndex = 3;
-            hoursWorkedlabel2.Text = "0:00";
+            grossPaylabel2.AutoSize = true;
+            grossPaylabel2.Location = new Point(101, 68);
+            grossPaylabel2.Name = "grossPaylabel2";
+            grossPaylabel2.Size = new Size(34, 15);
+            grossPaylabel2.TabIndex = 5;
+            grossPaylabel2.Text = "$0.00";
             // 
             // breakslabel2
             // 
@@ -149,14 +123,41 @@
             breakslabel2.TabIndex = 4;
             breakslabel2.Text = "0:00";
             // 
-            // grossPaylabel2
+            // hoursWorkedlabel2
             // 
-            grossPaylabel2.AutoSize = true;
-            grossPaylabel2.Location = new Point(101, 68);
-            grossPaylabel2.Name = "grossPaylabel2";
-            grossPaylabel2.Size = new Size(34, 15);
-            grossPaylabel2.TabIndex = 5;
-            grossPaylabel2.Text = "$0.00";
+            hoursWorkedlabel2.AutoSize = true;
+            hoursWorkedlabel2.Location = new Point(101, 19);
+            hoursWorkedlabel2.Name = "hoursWorkedlabel2";
+            hoursWorkedlabel2.Size = new Size(28, 15);
+            hoursWorkedlabel2.TabIndex = 3;
+            hoursWorkedlabel2.Text = "0:00";
+            // 
+            // grossPaylabel1
+            // 
+            grossPaylabel1.AutoSize = true;
+            grossPaylabel1.Location = new Point(6, 68);
+            grossPaylabel1.Name = "grossPaylabel1";
+            grossPaylabel1.Size = new Size(64, 15);
+            grossPaylabel1.TabIndex = 2;
+            grossPaylabel1.Text = "Gross Pay: ";
+            // 
+            // breakslabel1
+            // 
+            breakslabel1.AutoSize = true;
+            breakslabel1.Location = new Point(6, 43);
+            breakslabel1.Name = "breakslabel1";
+            breakslabel1.Size = new Size(47, 15);
+            breakslabel1.TabIndex = 1;
+            breakslabel1.Text = "Breaks: ";
+            // 
+            // hoursWorkedlabel1
+            // 
+            hoursWorkedlabel1.AutoSize = true;
+            hoursWorkedlabel1.Location = new Point(6, 19);
+            hoursWorkedlabel1.Name = "hoursWorkedlabel1";
+            hoursWorkedlabel1.Size = new Size(89, 15);
+            hoursWorkedlabel1.TabIndex = 0;
+            hoursWorkedlabel1.Text = "Hours Worked: ";
             // 
             // Form1
             // 

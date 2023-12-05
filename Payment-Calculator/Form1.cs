@@ -11,5 +11,10 @@ namespace Payment_Calculator
         {
 
         }
+
+        private void calculate_Hours(object sender, EventArgs e)
+        {
+
+        }
     }
 }

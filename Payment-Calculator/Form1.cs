@@ -6,5 +6,10 @@ namespace Payment_Calculator
         {
             InitializeComponent();
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -78,6 +78,7 @@
             finishTimePicker2.Name = "finishTimePicker2";
             finishTimePicker2.Size = new Size(200, 23);
             finishTimePicker2.TabIndex = 5;
+            finishTimePicker2.ValueChanged += calculate_HoursWorked;
             // 
             // calculateHoursbutton1
             // 
@@ -87,7 +88,7 @@
             calculateHoursbutton1.TabIndex = 6;
             calculateHoursbutton1.Text = "Calculate Hours";
             calculateHoursbutton1.UseVisualStyleBackColor = true;
-            calculateHoursbutton1.Click += calculate_Hours;
+            calculateHoursbutton1.Click += calculate_HoursWorked;
             // 
             // payInformationgroupBox1
             // 

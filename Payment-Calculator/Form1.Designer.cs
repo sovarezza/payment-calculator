@@ -69,6 +69,7 @@
             startdateTimePicker1.Name = "startdateTimePicker1";
             startdateTimePicker1.Size = new Size(200, 23);
             startdateTimePicker1.TabIndex = 4;
+            startdateTimePicker1.Value = new DateTime(2023, 12, 7, 7, 0, 0, 0);
             // 
             // finishTimePicker2
             // 
@@ -78,6 +79,7 @@
             finishTimePicker2.Name = "finishTimePicker2";
             finishTimePicker2.Size = new Size(200, 23);
             finishTimePicker2.TabIndex = 5;
+            finishTimePicker2.Value = new DateTime(2023, 12, 7, 12, 0, 0, 0);
             finishTimePicker2.ValueChanged += calculate_HoursWorked;
             // 
             // calculateHoursbutton1
@@ -172,7 +174,7 @@
             Controls.Add(finishTimeLabel);
             Controls.Add(startTimeLabel);
             Name = "Form1";
-            Text = "Form1";
+            Text = "Coles Pay Calculator";
             payInformationgroupBox1.ResumeLayout(false);
             payInformationgroupBox1.PerformLayout();
             ResumeLayout(false);

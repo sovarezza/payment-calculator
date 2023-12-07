@@ -18,12 +18,23 @@ namespace Payment_Calculator
         {
         }
 
-        private void calculate_HoursWorked(object sender, EventArgs e)
+        private void do_Calculations(object sender, EventArgs e)
         {
-            TimeSpan duration = DateTime.Parse(finishTimePicker2.Value.ToString()).Subtract(DateTime.Parse(startdateTimePicker1.Value.ToString()));
+            ScheduledHours(startdateTimePicker1.Value.ToString(),finishTimePicker2.Value.ToString());
+
+            /*
+             *  TimeSpan duration = DateTime.Parse(finishTimePicker2.Value.ToString()).Subtract(DateTime.Parse(startdateTimePicker1.Value.ToString()));
+             *  hoursWorkedlabel2.Text = duration.ToString(@"hh\:mm");
+             */
+
+        }
+
+        private TimeSpan ScheduledHours(string startTime, string finishTime)
+        {
+            TimeSpan duration = DateTime.Parse(finishTime).Subtract(DateTime.Parse(startTime));
             hoursWorkedlabel2.Text = duration.ToString(@"hh\:mm");
             CalculateBreaks(duration);
-            CalculateGrossPay();
+            return duration;
         }
 
         private void CalculateBreaks(TimeSpan duration)
@@ -79,18 +90,41 @@ namespace Payment_Calculator
             {
                 breakslabel2.Text = breaks.ToString(@"hh\:mm");
             }
+            CalculateGrossPay(duration, breaks);
         }
 
-        private void CalculateGrossPay()
+        private double CalculateGrossPay(TimeSpan duration, TimeSpan breaks)
         {
+            /*
             //get age
 
             //determine pay reasoning
 
             //calculate pay
 
+            //double payAmount = 25.20954;
+
             //display pay
-            grossPaylabel2.Text = "";
+            //grossPaylabel2.Text = "";
+            */
+            //convert duration into double
+            double scheduledHours = duration.TotalHours;
+
+            //convert breaks into double
+            double mealBreaks = breaks.TotalHours;
+
+            //subtract breaks from duration
+            double totalHours = scheduledHours-mealBreaks;
+
+            //multiply pay amount by hours worked for gross total
+            double payAmount = 23.23091;
+            double grossPay = totalHours*payAmount;
+
+            //display gross amount
+            grossPaylabel2.Text = grossPay.ToString("C");
+
+            //return gross amount
+            return grossPay;
         }
     }
 }

@@ -20,14 +20,16 @@ namespace Payment_Calculator
 
         private void do_Calculations(object sender, EventArgs e)
         {
-            ScheduledHours(startdateTimePicker1.Value,finishTimePicker2.Value);
-            /* 
-            CalculateBreaks();
-            CalculateGrossPay();
-            */
+            ScheduledHours(startdateTimePicker1.Value.ToString(),finishTimePicker2.Value.ToString());
+
+            /*
+             *  TimeSpan duration = DateTime.Parse(finishTimePicker2.Value.ToString()).Subtract(DateTime.Parse(startdateTimePicker1.Value.ToString()));
+             *  hoursWorkedlabel2.Text = duration.ToString(@"hh\:mm");
+             */
+
         }
 
-        private TimeSpan ScheduledHours(DateTime startTime, DateTime finishTime)
+        private TimeSpan ScheduledHours(string startTime, string finishTime)
         {
             TimeSpan duration = DateTime.Parse(finishTime).Subtract(DateTime.Parse(startTime));
             hoursWorkedlabel2.Text = duration.ToString(@"hh\:mm");

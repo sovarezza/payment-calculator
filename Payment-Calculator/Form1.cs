@@ -1,3 +1,11 @@
+/* 
+ * Author: C. James Bradley
+ * Project start date: 01/12/2023
+ * Description:
+ * This is a pay calculator specifically tailored around the Austrlian supermarket chain 'Coles'.
+ * It is intended to provide only a certain level of accuracy and will not be 100% accurate.
+ */
+
 using Microsoft.VisualBasic;
 
 namespace Payment_Calculator

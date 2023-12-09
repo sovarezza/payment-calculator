@@ -29,12 +29,6 @@ namespace Payment_Calculator
         private void do_Calculations(object sender, EventArgs e)
         {
             ScheduledHours(startdateTimePicker1.Value.ToString(), finishTimePicker2.Value.ToString());
-
-            /*
-             *  TimeSpan duration = DateTime.Parse(finishTimePicker2.Value.ToString()).Subtract(DateTime.Parse(startdateTimePicker1.Value.ToString()));
-             *  hoursWorkedlabel2.Text = duration.ToString(@"hh\:mm");
-             */
-
         }
 
         private TimeSpan ScheduledHours(string startTime, string finishTime)
@@ -154,13 +148,22 @@ namespace Payment_Calculator
                     if (tax < 0) //here to ensure that if tax amount calculation is a negative number, will return nothing
                     {
                         taxLabel2.Text = "$0.00";
+                        CalculateNetPay(num1, tax);
                         return 0;
                     }
                     taxLabel2.Text = tax.ToString("C");
+                    CalculateNetPay(num1, tax);
                     return tax;
                 }
             }
             return 0;
+        }
+
+        private double CalculateNetPay(double grossPay, double taxAmount)
+        {
+            double netPay = grossPay - taxAmount;
+            netPayLabel2.Text = netPay.ToString("C");
+            return netPay;
         }
     }
 }

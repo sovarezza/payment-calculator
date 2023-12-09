@@ -8,5 +8,19 @@ namespace Payment_Calculator
 {
     internal class PayRates
     {
+        //fields
+
+
+        //properties
+
+
+        //constructor
+        public PayRates() 
+        {
+
+        }
+
+        //methods
+
     }
 }

@@ -40,6 +40,10 @@
             grossPaylabel1 = new Label();
             breakslabel1 = new Label();
             hoursWorkedlabel1 = new Label();
+            taxLabel1 = new Label();
+            taxLabel2 = new Label();
+            netPayLabel1 = new Label();
+            netPayLabel2 = new Label();
             payInformationgroupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -94,7 +98,11 @@
             // 
             // payInformationgroupBox1
             // 
+            payInformationgroupBox1.Controls.Add(netPayLabel2);
+            payInformationgroupBox1.Controls.Add(netPayLabel1);
+            payInformationgroupBox1.Controls.Add(taxLabel2);
             payInformationgroupBox1.Controls.Add(grossPaylabel2);
+            payInformationgroupBox1.Controls.Add(taxLabel1);
             payInformationgroupBox1.Controls.Add(breakslabel2);
             payInformationgroupBox1.Controls.Add(hoursWorkedlabel2);
             payInformationgroupBox1.Controls.Add(grossPaylabel1);
@@ -102,7 +110,7 @@
             payInformationgroupBox1.Controls.Add(hoursWorkedlabel1);
             payInformationgroupBox1.Location = new Point(93, 161);
             payInformationgroupBox1.Name = "payInformationgroupBox1";
-            payInformationgroupBox1.Size = new Size(200, 106);
+            payInformationgroupBox1.Size = new Size(200, 149);
             payInformationgroupBox1.TabIndex = 7;
             payInformationgroupBox1.TabStop = false;
             payInformationgroupBox1.Text = "Pay Information";
@@ -162,6 +170,42 @@
             hoursWorkedlabel1.TabIndex = 0;
             hoursWorkedlabel1.Text = "Hours Worked: ";
             // 
+            // taxLabel1
+            // 
+            taxLabel1.AutoSize = true;
+            taxLabel1.Location = new Point(6, 93);
+            taxLabel1.Name = "taxLabel1";
+            taxLabel1.Size = new Size(27, 15);
+            taxLabel1.TabIndex = 8;
+            taxLabel1.Text = "Tax:";
+            // 
+            // taxLabel2
+            // 
+            taxLabel2.AutoSize = true;
+            taxLabel2.Location = new Point(101, 93);
+            taxLabel2.Name = "taxLabel2";
+            taxLabel2.Size = new Size(34, 15);
+            taxLabel2.TabIndex = 9;
+            taxLabel2.Text = "$0.00";
+            // 
+            // netPayLabel1
+            // 
+            netPayLabel1.AutoSize = true;
+            netPayLabel1.Location = new Point(6, 119);
+            netPayLabel1.Name = "netPayLabel1";
+            netPayLabel1.Size = new Size(51, 15);
+            netPayLabel1.TabIndex = 8;
+            netPayLabel1.Text = "Net Pay:";
+            // 
+            // netPayLabel2
+            // 
+            netPayLabel2.AutoSize = true;
+            netPayLabel2.Location = new Point(101, 119);
+            netPayLabel2.Name = "netPayLabel2";
+            netPayLabel2.Size = new Size(34, 15);
+            netPayLabel2.TabIndex = 8;
+            netPayLabel2.Text = "$0.00";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -195,5 +239,9 @@
         private Label grossPaylabel1;
         private Label breakslabel1;
         private Label hoursWorkedlabel1;
+        private Label netPayLabel2;
+        private Label netPayLabel1;
+        private Label taxLabel2;
+        private Label taxLabel1;
     }
 }

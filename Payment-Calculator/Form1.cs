@@ -28,7 +28,7 @@ namespace Payment_Calculator
 
         private void do_Calculations(object sender, EventArgs e)
         {
-            ScheduledHours(startdateTimePicker1.Value.ToString(),finishTimePicker2.Value.ToString());
+            ScheduledHours(startdateTimePicker1.Value.ToString(), finishTimePicker2.Value.ToString());
 
             /*
              *  TimeSpan duration = DateTime.Parse(finishTimePicker2.Value.ToString()).Subtract(DateTime.Parse(startdateTimePicker1.Value.ToString()));
@@ -122,17 +122,45 @@ namespace Payment_Calculator
             double mealBreaks = breaks.TotalHours;
 
             //subtract breaks from duration
-            double totalHours = scheduledHours-mealBreaks;
+            double totalHours = scheduledHours - mealBreaks;
 
             //multiply pay amount by hours worked for gross total
             double payAmount = 25.27490;
-            double grossPay = totalHours*payAmount;
+            double grossPay = totalHours * payAmount;
 
             //display gross amount
             grossPaylabel2.Text = grossPay.ToString("C");
 
+            CalculateTax(grossPay);
+
             //return gross amount
             return grossPay;
+        }
+
+        private double CalculateTax(double num1)
+        {
+            #region Tax Lookup Arrays   
+            double[] taxLookupAmt = new double[9] { 0, 359, 438, 548, 721, 865, 1282, 2307, 3461 }; //ATO tax amounts to compare gross pay to
+            double[] taxLookupA = new double[9] { 0.0000, 0.1900, 0.2900, 0.2100, 0.2190, 0.3477, 0.3450, 0.3900, 0.4700 }; //number to multiply gross pay by
+            double[] taxLookupB = new double[9] { 0.0000, 68.3462, 112.1942, 68.3465, 74.8369, 186.2119, 182.7504, 286.5965, 563.5196 }; //amount to minus from inital calculation to determine tax amount
+            #endregion
+
+            for (int i = 0; i < taxLookupAmt.Length; i++)
+            {
+                if (taxLookupAmt[i] > num1)
+                {
+                    double tax = (Math.Floor((Math.Truncate(num1))) * taxLookupA[i] - taxLookupB[i]);
+
+                    if (tax < 0) //here to ensure that if tax amount calculation is a negative number, will return nothing
+                    {
+                        taxLabel2.Text = "$0.00";
+                        return 0;
+                    }
+                    taxLabel2.Text = tax.ToString("C");
+                    return tax;
+                }
+            }
+            return 0;
         }
     }
 }

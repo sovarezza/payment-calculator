@@ -41,8 +41,6 @@ namespace Payment_Calculator
 
         private void CalculateBreaks(TimeSpan duration)
         {
-            //get hours worked -- already done via argument
-
             //find break times
             TimeSpan breaks = TimeSpan.Zero;
             bool breaksErrorMsg = false;
@@ -97,18 +95,6 @@ namespace Payment_Calculator
 
         private double CalculateGrossPay(TimeSpan duration, TimeSpan breaks)
         {
-            /*
-            //get age
-
-            //determine pay reasoning
-
-            //calculate pay
-
-            //double payAmount = 25.20954;
-
-            //display pay
-            //grossPaylabel2.Text = "";
-            */
             //convert duration into double
             double scheduledHours = duration.TotalHours;
 

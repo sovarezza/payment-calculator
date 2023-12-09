@@ -125,7 +125,7 @@ namespace Payment_Calculator
             double totalHours = scheduledHours-mealBreaks;
 
             //multiply pay amount by hours worked for gross total
-            double payAmount = 23.23091;
+            double payAmount = 25.27490;
             double grossPay = totalHours*payAmount;
 
             //display gross amount

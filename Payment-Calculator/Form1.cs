@@ -138,14 +138,6 @@ namespace Payment_Calculator
                 else if (taxLookupAmt[i] > grossPay)
                 {
                     double tax = (Math.Floor((Math.Truncate(grossPay))) * taxLookupA[i] - taxLookupB[i]);
-
-                    /*                    if (tax < 1) //here to ensure that if tax amount calculation is a negative number, will return nothing
-                                        {
-                                            taxLabel2.Text = "$0.00";
-                                            CalculateNetPay(grossPay, tax);
-                                            return 0;
-                                        }
-                                        else*/
                     {
                         CalculateNetPay(grossPay, tax);
                         resultTaxAmount.Text = tax.ToString("C");

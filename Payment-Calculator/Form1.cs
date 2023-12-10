@@ -112,12 +112,13 @@ namespace Payment_Calculator
             grossPaylabel2.Text = grossPay.ToString("C");
 
             CalculateTax(grossPay);
+            //CalculateNetPay(grossPay, 0);
 
             //return gross amount
             return grossPay;
         }
 
-        private double CalculateTax(double num1)
+        private double CalculateTax(double grossPay)
         {
             #region Tax Lookup Arrays   
             double[] taxLookupAmt = new double[9] { 0, 359, 438, 548, 721, 865, 1282, 2307, 3461 }; //ATO tax amounts to compare gross pay to
@@ -127,19 +128,29 @@ namespace Payment_Calculator
 
             for (int i = 0; i < taxLookupAmt.Length; i++)
             {
-                if (taxLookupAmt[i] > num1)
+                if(grossPay <= taxLookupAmt[0] || (grossPay > taxLookupAmt[0] && grossPay < taxLookupAmt[1]))
                 {
-                    double tax = (Math.Floor((Math.Truncate(num1))) * taxLookupA[i] - taxLookupB[i]);
+                    taxLabel2.Text = 0.ToString("C");
+                    double tax = 0;
+                    CalculateNetPay(grossPay, tax);
+                    return 0;
+                }
+                else if (taxLookupAmt[i] > grossPay)
+                {
+                    double tax = (Math.Floor((Math.Truncate(grossPay))) * taxLookupA[i] - taxLookupB[i]);
 
-                    if (tax < 0) //here to ensure that if tax amount calculation is a negative number, will return nothing
+/*                    if (tax < 1) //here to ensure that if tax amount calculation is a negative number, will return nothing
                     {
                         taxLabel2.Text = "$0.00";
-                        CalculateNetPay(num1, tax);
+                        CalculateNetPay(grossPay, tax);
                         return 0;
                     }
-                    taxLabel2.Text = tax.ToString("C");
-                    CalculateNetPay(num1, tax);
-                    return tax;
+                    else*/
+                    {
+                        CalculateNetPay(grossPay, tax);
+                        taxLabel2.Text = tax.ToString("C");
+                        return tax;
+                    }
                 }
             }
             return 0;

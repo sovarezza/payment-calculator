@@ -28,13 +28,13 @@ namespace Payment_Calculator
 
         private void do_Calculations(object sender, EventArgs e)
         {
-            ScheduledHours(startdateTimePicker1.Value.ToString(), finishTimePicker2.Value.ToString());
+            ScheduledHours(inputMonStartTimePicker.Value.ToString(), inputMonFinishTimePicker.Value.ToString());
         }
 
         private TimeSpan ScheduledHours(string startTime, string finishTime)
         {
             TimeSpan duration = DateTime.Parse(finishTime).Subtract(DateTime.Parse(startTime));
-            hoursWorkedlabel2.Text = duration.ToString(@"hh\:mm");
+            resultMonHoursScheduled.Text = duration.ToString(@"hh\:mm");
             CalculateBreaks(duration);
             return duration;
         }
@@ -84,11 +84,11 @@ namespace Payment_Calculator
             //display breaks
             if (breaksErrorMsg == true)
             {
-                breakslabel2.Text = "An error occurred.";
+                resultMonBreaks.Text = "An error occurred.";
             }
             else
             {
-                breakslabel2.Text = breaks.ToString(@"hh\:mm");
+                resultMonBreaks.Text = breaks.ToString(@"hh\:mm");
             }
             CalculateGrossPay(duration, breaks);
         }
@@ -109,7 +109,7 @@ namespace Payment_Calculator
             double grossPay = totalHours * payAmount;
 
             //display gross amount
-            grossPaylabel2.Text = grossPay.ToString("C");
+            resultMonGrossPay.Text = grossPay.ToString("C");
 
             CalculateTax(grossPay);
             //CalculateNetPay(grossPay, 0);
@@ -128,9 +128,9 @@ namespace Payment_Calculator
 
             for (int i = 0; i < taxLookupAmt.Length; i++)
             {
-                if(grossPay <= taxLookupAmt[0] || (grossPay > taxLookupAmt[0] && grossPay < taxLookupAmt[1]))
+                if (grossPay <= taxLookupAmt[0] || (grossPay > taxLookupAmt[0] && grossPay < taxLookupAmt[1]))
                 {
-                    taxLabel2.Text = 0.ToString("C");
+                    resultTaxAmount.Text = 0.ToString("C");
                     double tax = 0;
                     CalculateNetPay(grossPay, tax);
                     return 0;
@@ -139,16 +139,16 @@ namespace Payment_Calculator
                 {
                     double tax = (Math.Floor((Math.Truncate(grossPay))) * taxLookupA[i] - taxLookupB[i]);
 
-/*                    if (tax < 1) //here to ensure that if tax amount calculation is a negative number, will return nothing
+                    /*                    if (tax < 1) //here to ensure that if tax amount calculation is a negative number, will return nothing
+                                        {
+                                            taxLabel2.Text = "$0.00";
+                                            CalculateNetPay(grossPay, tax);
+                                            return 0;
+                                        }
+                                        else*/
                     {
-                        taxLabel2.Text = "$0.00";
                         CalculateNetPay(grossPay, tax);
-                        return 0;
-                    }
-                    else*/
-                    {
-                        CalculateNetPay(grossPay, tax);
-                        taxLabel2.Text = tax.ToString("C");
+                        resultTaxAmount.Text = tax.ToString("C");
                         return tax;
                     }
                 }
@@ -159,7 +159,7 @@ namespace Payment_Calculator
         private double CalculateNetPay(double grossPay, double taxAmount)
         {
             double netPay = grossPay - taxAmount;
-            netPayLabel2.Text = netPay.ToString("C");
+            resultNetPay.Text = netPay.ToString("C");
             return netPay;
         }
     }

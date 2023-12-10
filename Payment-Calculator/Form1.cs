@@ -28,7 +28,8 @@ namespace Payment_Calculator
 
         private void do_Calculations(object sender, EventArgs e)
         {
-            ScheduledHours(inputMonStartTimePicker.Value.ToString(), inputMonFinishTimePicker.Value.ToString());
+            //ScheduledHours(inputMonStartTimePicker.Value.ToString(), inputMonFinishTimePicker.Value.ToString());
+            WeekDay monday = new WeekDay(inputMonStartTimePicker.Value, inputMonFinishTimePicker.Value);
         }
 
         private TimeSpan ScheduledHours(string startTime, string finishTime)

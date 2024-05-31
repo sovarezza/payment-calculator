@@ -8,6 +8,7 @@ namespace Payment_Calculator
 {
     internal class Payment
     {
+        /*
         //fields
 
         //properties
@@ -42,6 +43,6 @@ namespace Payment_Calculator
             double netPay = grossPay - taxAmount;
             resultNetPay.Text = netPay.ToString("C");
             return netPay;
-        }
+        }*/
     }
 }

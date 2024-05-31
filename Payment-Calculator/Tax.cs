@@ -8,6 +8,7 @@ namespace Payment_Calculator
 {
     internal class Tax
     {
+        /*
         //fields
 
         //properties
@@ -43,6 +44,6 @@ namespace Payment_Calculator
                 }
             }
             return 0;
-        }
+        }*/
     }
 }

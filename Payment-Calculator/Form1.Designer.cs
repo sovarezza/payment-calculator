@@ -334,6 +334,7 @@
             inputSunFinishTimePicker.Size = new Size(58, 23);
             inputSunFinishTimePicker.TabIndex = 5;
             inputSunFinishTimePicker.Value = new DateTime(2023, 12, 7, 0, 0, 0, 0);
+            inputSunFinishTimePicker.ValueChanged += do_Calculations;
             // 
             // labelSunStartTime
             // 
@@ -447,6 +448,7 @@
             inputSatFinishTimePicker.Size = new Size(58, 23);
             inputSatFinishTimePicker.TabIndex = 5;
             inputSatFinishTimePicker.Value = new DateTime(2023, 12, 7, 0, 0, 0, 0);
+            inputSatFinishTimePicker.ValueChanged += do_Calculations;
             // 
             // labelSatStartTime
             // 
@@ -560,6 +562,7 @@
             inputFriFinishTimePicker.Size = new Size(58, 23);
             inputFriFinishTimePicker.TabIndex = 5;
             inputFriFinishTimePicker.Value = new DateTime(2023, 12, 7, 0, 0, 0, 0);
+            inputFriFinishTimePicker.ValueChanged += do_Calculations;
             // 
             // labelFriStartTime
             // 
@@ -673,6 +676,7 @@
             inputThurFinishTimePicker.Size = new Size(58, 23);
             inputThurFinishTimePicker.TabIndex = 5;
             inputThurFinishTimePicker.Value = new DateTime(2023, 12, 7, 0, 0, 0, 0);
+            inputThurFinishTimePicker.ValueChanged += do_Calculations;
             // 
             // labelThurStartTime
             // 
@@ -786,6 +790,7 @@
             inputWedFinishTimePicker.Size = new Size(58, 23);
             inputWedFinishTimePicker.TabIndex = 5;
             inputWedFinishTimePicker.Value = new DateTime(2023, 12, 7, 0, 0, 0, 0);
+            inputWedFinishTimePicker.ValueChanged += do_Calculations;
             // 
             // labelWedStartTime
             // 
@@ -899,6 +904,7 @@
             inputTueFinishTimePicker.Size = new Size(58, 23);
             inputTueFinishTimePicker.TabIndex = 5;
             inputTueFinishTimePicker.Value = new DateTime(2023, 12, 7, 0, 0, 0, 0);
+            inputTueFinishTimePicker.ValueChanged += do_Calculations;
             // 
             // labelTueStartTime
             // 
@@ -1002,6 +1008,7 @@
             Name = "Form1";
             ShowIcon = false;
             Text = "Coles Pay Calculator";
+            Load += Form1_Load;
             payInformationgroupBox1.ResumeLayout(false);
             payInformationgroupBox1.PerformLayout();
             panel1.ResumeLayout(false);

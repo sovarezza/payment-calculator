@@ -45,7 +45,7 @@
             labelMonBreaks = new Label();
             labelMonHoursScheduled = new Label();
             panel1 = new Panel();
-            groupBox5 = new GroupBox();
+            gbSunInfo = new GroupBox();
             inputSunStartTimePicker = new DateTimePicker();
             inputSunFinishTimePicker = new DateTimePicker();
             labelSunStartTime = new Label();
@@ -56,7 +56,7 @@
             resultSunBreaks = new Label();
             resultSunHoursScheduled = new Label();
             labelSunBreaks = new Label();
-            groupBox4 = new GroupBox();
+            gbSatInfo = new GroupBox();
             inputSatStartTimePicker = new DateTimePicker();
             inputSatFinishTimePicker = new DateTimePicker();
             labelSatStartTime = new Label();
@@ -67,7 +67,7 @@
             resultSatBreaks = new Label();
             resultSatHoursScheduled = new Label();
             labelSatBreaks = new Label();
-            groupBox3 = new GroupBox();
+            gbFriInfo = new GroupBox();
             inputFriStartTimePicker = new DateTimePicker();
             inputFriFinishTimePicker = new DateTimePicker();
             labelFriStartTime = new Label();
@@ -78,7 +78,7 @@
             resultFriBreaks = new Label();
             resultFriHoursScheduled = new Label();
             labelFriBreaks = new Label();
-            groupBox2 = new GroupBox();
+            gbThuInfo = new GroupBox();
             inputThurStartTimePicker = new DateTimePicker();
             inputThurFinishTimePicker = new DateTimePicker();
             labelThurStartTime = new Label();
@@ -89,7 +89,7 @@
             resultThurBreaks = new Label();
             resultThurHoursScheduled = new Label();
             labelThurBreaks = new Label();
-            groupBox1 = new GroupBox();
+            gbWedInfo = new GroupBox();
             inputWedStartTimePicker = new DateTimePicker();
             inputWedFinishTimePicker = new DateTimePicker();
             labelWedStartTime = new Label();
@@ -114,11 +114,11 @@
             gbMonInfo = new GroupBox();
             payInformationgroupBox1.SuspendLayout();
             panel1.SuspendLayout();
-            groupBox5.SuspendLayout();
-            groupBox4.SuspendLayout();
-            groupBox3.SuspendLayout();
-            groupBox2.SuspendLayout();
-            groupBox1.SuspendLayout();
+            gbSunInfo.SuspendLayout();
+            gbSatInfo.SuspendLayout();
+            gbFriInfo.SuspendLayout();
+            gbThuInfo.SuspendLayout();
+            gbWedInfo.SuspendLayout();
             gbTueInfo.SuspendLayout();
             gbMonInfo.SuspendLayout();
             SuspendLayout();
@@ -186,7 +186,6 @@
             payInformationgroupBox1.TabIndex = 7;
             payInformationgroupBox1.TabStop = false;
             payInformationgroupBox1.Text = "Pay Information";
-            payInformationgroupBox1.Enter += groupBox1_Enter;
             // 
             // resultNetPay
             // 
@@ -280,11 +279,11 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(groupBox5);
-            panel1.Controls.Add(groupBox4);
-            panel1.Controls.Add(groupBox3);
-            panel1.Controls.Add(groupBox2);
-            panel1.Controls.Add(groupBox1);
+            panel1.Controls.Add(gbSunInfo);
+            panel1.Controls.Add(gbSatInfo);
+            panel1.Controls.Add(gbFriInfo);
+            panel1.Controls.Add(gbThuInfo);
+            panel1.Controls.Add(gbWedInfo);
             panel1.Controls.Add(gbTueInfo);
             panel1.Controls.Add(gbMonInfo);
             panel1.Controls.Add(calculateHoursbutton1);
@@ -295,24 +294,24 @@
             panel1.Size = new Size(1305, 277);
             panel1.TabIndex = 8;
             // 
-            // groupBox5
+            // gbSunInfo
             // 
-            groupBox5.Controls.Add(inputSunStartTimePicker);
-            groupBox5.Controls.Add(inputSunFinishTimePicker);
-            groupBox5.Controls.Add(labelSunStartTime);
-            groupBox5.Controls.Add(resultSunGrossPay);
-            groupBox5.Controls.Add(labelSunFinishTime);
-            groupBox5.Controls.Add(labelSunHoursScheduled);
-            groupBox5.Controls.Add(labelSunGrossPay);
-            groupBox5.Controls.Add(resultSunBreaks);
-            groupBox5.Controls.Add(resultSunHoursScheduled);
-            groupBox5.Controls.Add(labelSunBreaks);
-            groupBox5.Location = new Point(1116, 12);
-            groupBox5.Name = "groupBox5";
-            groupBox5.Size = new Size(178, 170);
-            groupBox5.TabIndex = 10;
-            groupBox5.TabStop = false;
-            groupBox5.Text = "Sunday";
+            gbSunInfo.Controls.Add(inputSunStartTimePicker);
+            gbSunInfo.Controls.Add(inputSunFinishTimePicker);
+            gbSunInfo.Controls.Add(labelSunStartTime);
+            gbSunInfo.Controls.Add(resultSunGrossPay);
+            gbSunInfo.Controls.Add(labelSunFinishTime);
+            gbSunInfo.Controls.Add(labelSunHoursScheduled);
+            gbSunInfo.Controls.Add(labelSunGrossPay);
+            gbSunInfo.Controls.Add(resultSunBreaks);
+            gbSunInfo.Controls.Add(resultSunHoursScheduled);
+            gbSunInfo.Controls.Add(labelSunBreaks);
+            gbSunInfo.Location = new Point(1116, 12);
+            gbSunInfo.Name = "gbSunInfo";
+            gbSunInfo.Size = new Size(178, 170);
+            gbSunInfo.TabIndex = 10;
+            gbSunInfo.TabStop = false;
+            gbSunInfo.Text = "Sunday";
             // 
             // inputSunStartTimePicker
             // 
@@ -408,24 +407,24 @@
             labelSunBreaks.TabIndex = 1;
             labelSunBreaks.Text = "Breaks: ";
             // 
-            // groupBox4
+            // gbSatInfo
             // 
-            groupBox4.Controls.Add(inputSatStartTimePicker);
-            groupBox4.Controls.Add(inputSatFinishTimePicker);
-            groupBox4.Controls.Add(labelSatStartTime);
-            groupBox4.Controls.Add(resulSatGrossPay);
-            groupBox4.Controls.Add(labelSatFinishTime);
-            groupBox4.Controls.Add(labelSatHoursScheduled);
-            groupBox4.Controls.Add(labelSatGrossPay);
-            groupBox4.Controls.Add(resultSatBreaks);
-            groupBox4.Controls.Add(resultSatHoursScheduled);
-            groupBox4.Controls.Add(labelSatBreaks);
-            groupBox4.Location = new Point(932, 12);
-            groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(178, 170);
-            groupBox4.TabIndex = 10;
-            groupBox4.TabStop = false;
-            groupBox4.Text = "Saturday";
+            gbSatInfo.Controls.Add(inputSatStartTimePicker);
+            gbSatInfo.Controls.Add(inputSatFinishTimePicker);
+            gbSatInfo.Controls.Add(labelSatStartTime);
+            gbSatInfo.Controls.Add(resulSatGrossPay);
+            gbSatInfo.Controls.Add(labelSatFinishTime);
+            gbSatInfo.Controls.Add(labelSatHoursScheduled);
+            gbSatInfo.Controls.Add(labelSatGrossPay);
+            gbSatInfo.Controls.Add(resultSatBreaks);
+            gbSatInfo.Controls.Add(resultSatHoursScheduled);
+            gbSatInfo.Controls.Add(labelSatBreaks);
+            gbSatInfo.Location = new Point(932, 12);
+            gbSatInfo.Name = "gbSatInfo";
+            gbSatInfo.Size = new Size(178, 170);
+            gbSatInfo.TabIndex = 10;
+            gbSatInfo.TabStop = false;
+            gbSatInfo.Text = "Saturday";
             // 
             // inputSatStartTimePicker
             // 
@@ -521,24 +520,24 @@
             labelSatBreaks.TabIndex = 1;
             labelSatBreaks.Text = "Breaks: ";
             // 
-            // groupBox3
+            // gbFriInfo
             // 
-            groupBox3.Controls.Add(inputFriStartTimePicker);
-            groupBox3.Controls.Add(inputFriFinishTimePicker);
-            groupBox3.Controls.Add(labelFriStartTime);
-            groupBox3.Controls.Add(resultFriGrossPay);
-            groupBox3.Controls.Add(labelFriFinishTime);
-            groupBox3.Controls.Add(labelFriHoursScheduled);
-            groupBox3.Controls.Add(labelFriGrossPay);
-            groupBox3.Controls.Add(resultFriBreaks);
-            groupBox3.Controls.Add(resultFriHoursScheduled);
-            groupBox3.Controls.Add(labelFriBreaks);
-            groupBox3.Location = new Point(748, 12);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(178, 170);
-            groupBox3.TabIndex = 10;
-            groupBox3.TabStop = false;
-            groupBox3.Text = "Friday";
+            gbFriInfo.Controls.Add(inputFriStartTimePicker);
+            gbFriInfo.Controls.Add(inputFriFinishTimePicker);
+            gbFriInfo.Controls.Add(labelFriStartTime);
+            gbFriInfo.Controls.Add(resultFriGrossPay);
+            gbFriInfo.Controls.Add(labelFriFinishTime);
+            gbFriInfo.Controls.Add(labelFriHoursScheduled);
+            gbFriInfo.Controls.Add(labelFriGrossPay);
+            gbFriInfo.Controls.Add(resultFriBreaks);
+            gbFriInfo.Controls.Add(resultFriHoursScheduled);
+            gbFriInfo.Controls.Add(labelFriBreaks);
+            gbFriInfo.Location = new Point(748, 12);
+            gbFriInfo.Name = "gbFriInfo";
+            gbFriInfo.Size = new Size(178, 170);
+            gbFriInfo.TabIndex = 10;
+            gbFriInfo.TabStop = false;
+            gbFriInfo.Text = "Friday";
             // 
             // inputFriStartTimePicker
             // 
@@ -634,24 +633,24 @@
             labelFriBreaks.TabIndex = 1;
             labelFriBreaks.Text = "Breaks: ";
             // 
-            // groupBox2
+            // gbThuInfo
             // 
-            groupBox2.Controls.Add(inputThurStartTimePicker);
-            groupBox2.Controls.Add(inputThurFinishTimePicker);
-            groupBox2.Controls.Add(labelThurStartTime);
-            groupBox2.Controls.Add(resultThurGrossPay);
-            groupBox2.Controls.Add(labelThurFinishTime);
-            groupBox2.Controls.Add(labelThurHoursScheduled);
-            groupBox2.Controls.Add(labelThurGrossPay);
-            groupBox2.Controls.Add(resultThurBreaks);
-            groupBox2.Controls.Add(resultThurHoursScheduled);
-            groupBox2.Controls.Add(labelThurBreaks);
-            groupBox2.Location = new Point(564, 12);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(178, 170);
-            groupBox2.TabIndex = 10;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Thursday";
+            gbThuInfo.Controls.Add(inputThurStartTimePicker);
+            gbThuInfo.Controls.Add(inputThurFinishTimePicker);
+            gbThuInfo.Controls.Add(labelThurStartTime);
+            gbThuInfo.Controls.Add(resultThurGrossPay);
+            gbThuInfo.Controls.Add(labelThurFinishTime);
+            gbThuInfo.Controls.Add(labelThurHoursScheduled);
+            gbThuInfo.Controls.Add(labelThurGrossPay);
+            gbThuInfo.Controls.Add(resultThurBreaks);
+            gbThuInfo.Controls.Add(resultThurHoursScheduled);
+            gbThuInfo.Controls.Add(labelThurBreaks);
+            gbThuInfo.Location = new Point(564, 12);
+            gbThuInfo.Name = "gbThuInfo";
+            gbThuInfo.Size = new Size(178, 170);
+            gbThuInfo.TabIndex = 10;
+            gbThuInfo.TabStop = false;
+            gbThuInfo.Text = "Thursday";
             // 
             // inputThurStartTimePicker
             // 
@@ -747,24 +746,24 @@
             labelThurBreaks.TabIndex = 1;
             labelThurBreaks.Text = "Breaks: ";
             // 
-            // groupBox1
+            // gbWedInfo
             // 
-            groupBox1.Controls.Add(inputWedStartTimePicker);
-            groupBox1.Controls.Add(inputWedFinishTimePicker);
-            groupBox1.Controls.Add(labelWedStartTime);
-            groupBox1.Controls.Add(resultWedGrossPay);
-            groupBox1.Controls.Add(labelWedFinishTime);
-            groupBox1.Controls.Add(labelWedHoursScheduled);
-            groupBox1.Controls.Add(labelWedGrossPay);
-            groupBox1.Controls.Add(resultWedBreaks);
-            groupBox1.Controls.Add(resultWedHoursScheduled);
-            groupBox1.Controls.Add(labelWedBreaks);
-            groupBox1.Location = new Point(380, 12);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(178, 170);
-            groupBox1.TabIndex = 10;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Wednesday";
+            gbWedInfo.Controls.Add(inputWedStartTimePicker);
+            gbWedInfo.Controls.Add(inputWedFinishTimePicker);
+            gbWedInfo.Controls.Add(labelWedStartTime);
+            gbWedInfo.Controls.Add(resultWedGrossPay);
+            gbWedInfo.Controls.Add(labelWedFinishTime);
+            gbWedInfo.Controls.Add(labelWedHoursScheduled);
+            gbWedInfo.Controls.Add(labelWedGrossPay);
+            gbWedInfo.Controls.Add(resultWedBreaks);
+            gbWedInfo.Controls.Add(resultWedHoursScheduled);
+            gbWedInfo.Controls.Add(labelWedBreaks);
+            gbWedInfo.Location = new Point(380, 12);
+            gbWedInfo.Name = "gbWedInfo";
+            gbWedInfo.Size = new Size(178, 170);
+            gbWedInfo.TabIndex = 10;
+            gbWedInfo.TabStop = false;
+            gbWedInfo.Text = "Wednesday";
             // 
             // inputWedStartTimePicker
             // 
@@ -1006,16 +1005,16 @@
             payInformationgroupBox1.ResumeLayout(false);
             payInformationgroupBox1.PerformLayout();
             panel1.ResumeLayout(false);
-            groupBox5.ResumeLayout(false);
-            groupBox5.PerformLayout();
-            groupBox4.ResumeLayout(false);
-            groupBox4.PerformLayout();
-            groupBox3.ResumeLayout(false);
-            groupBox3.PerformLayout();
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
+            gbSunInfo.ResumeLayout(false);
+            gbSunInfo.PerformLayout();
+            gbSatInfo.ResumeLayout(false);
+            gbSatInfo.PerformLayout();
+            gbFriInfo.ResumeLayout(false);
+            gbFriInfo.PerformLayout();
+            gbThuInfo.ResumeLayout(false);
+            gbThuInfo.PerformLayout();
+            gbWedInfo.ResumeLayout(false);
+            gbWedInfo.PerformLayout();
             gbTueInfo.ResumeLayout(false);
             gbTueInfo.PerformLayout();
             gbMonInfo.ResumeLayout(false);
@@ -1054,7 +1053,7 @@
         private Label resultTueBreaks;
         private Label resultTueHoursScheduled;
         private Label labelTueBreaks;
-        private GroupBox groupBox5;
+        private GroupBox gbSunInfo;
         private DateTimePicker inputSunStartTimePicker;
         private DateTimePicker inputSunFinishTimePicker;
         private Label labelSunStartTime;
@@ -1065,7 +1064,7 @@
         private Label resultSunBreaks;
         private Label resultSunHoursScheduled;
         private Label labelSunBreaks;
-        private GroupBox groupBox4;
+        private GroupBox gbSatInfo;
         private DateTimePicker inputSatStartTimePicker;
         private DateTimePicker inputSatFinishTimePicker;
         private Label labelSatStartTime;
@@ -1076,7 +1075,7 @@
         private Label resultSatBreaks;
         private Label resultSatHoursScheduled;
         private Label labelSatBreaks;
-        private GroupBox groupBox3;
+        private GroupBox gbFriInfo;
         private DateTimePicker inputFriStartTimePicker;
         private DateTimePicker inputFriFinishTimePicker;
         private Label labelFriStartTime;
@@ -1087,7 +1086,7 @@
         private Label resultFriBreaks;
         private Label resultFriHoursScheduled;
         private Label labelFriBreaks;
-        private GroupBox groupBox2;
+        private GroupBox gbThuInfo;
         private DateTimePicker inputThurStartTimePicker;
         private DateTimePicker inputThurFinishTimePicker;
         private Label labelThurStartTime;
@@ -1098,7 +1097,7 @@
         private Label resultThurBreaks;
         private Label resultThurHoursScheduled;
         private Label labelThurBreaks;
-        private GroupBox groupBox1;
+        private GroupBox gbWedInfo;
         private DateTimePicker inputWedStartTimePicker;
         private DateTimePicker inputWedFinishTimePicker;
         private Label labelWedStartTime;

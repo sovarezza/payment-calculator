@@ -17,25 +17,32 @@ namespace Payment_Calculator
             InitializeComponent();
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void calculateHoursbutton1_Click(object sender, EventArgs e)
-        {
-        }
-
         private void do_Calculations(object sender, EventArgs e)    //method that is run when "Calculate Hours" button is pressed
         {
-            //ScheduledHours(inputMonStartTimePicker.Value.ToString(), inputMonFinishTimePicker.Value.ToString());
-            //WeekDay monday = new WeekDay(inputMonStartTimePicker.Value, inputMonFinishTimePicker.Value);
+            //on click, check if there are any changes to all start and finish time boxes -- potentially add a checkbox to each day (will require minor redesign of gui)
+
+            //if there is an error, display a popup box preventing any calculations until rectified
+
+            //create an object for each day using the start time and finish time from each changed input
+
+            //have each object run the method (inside WEEKDAY class) calculating scheduled hours and breaks
+            //send the calculated hours to PAYMENT class to calculate gross pay
+
+            //display the gross amount within each time box
+
+            //combine all amounts of gross pay and send to TAX class
+
+            //calculate tax by running method (within TAX class) and return tax amount
+
+            //calculate net pay (within PAYMENT class) using tax amount
+
+            //display tax amount and net pay amount
+
         }
 
         private TimeSpan ScheduledHours(string startTime, string finishTime)
         {
             TimeSpan duration = DateTime.Parse(finishTime).Subtract(DateTime.Parse(startTime));
-            resultMonHoursScheduled.Text = duration.ToString(@"hh\:mm");
             CalculateBreaks(duration);
             return duration;
         }
@@ -113,7 +120,6 @@ namespace Payment_Calculator
             resultMonGrossPay.Text = grossPay.ToString("C");
 
             CalculateTax(grossPay);
-            //CalculateNetPay(grossPay, 0);
 
             //return gross amount
             return grossPay;

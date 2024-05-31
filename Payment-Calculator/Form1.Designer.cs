@@ -150,7 +150,7 @@
             inputMonStartTimePicker.ShowUpDown = true;
             inputMonStartTimePicker.Size = new Size(58, 23);
             inputMonStartTimePicker.TabIndex = 4;
-            inputMonStartTimePicker.Value = new DateTime(2023, 12, 7, 7, 0, 0, 0);
+            inputMonStartTimePicker.Value = new DateTime(2023, 12, 7, 0, 0, 0, 0);
             // 
             // inputMonFinishTimePicker
             // 
@@ -161,7 +161,7 @@
             inputMonFinishTimePicker.ShowUpDown = true;
             inputMonFinishTimePicker.Size = new Size(58, 23);
             inputMonFinishTimePicker.TabIndex = 5;
-            inputMonFinishTimePicker.Value = new DateTime(2023, 12, 7, 12, 0, 0, 0);
+            inputMonFinishTimePicker.Value = new DateTime(2023, 12, 7, 0, 0, 0, 0);
             inputMonFinishTimePicker.ValueChanged += do_Calculations;
             // 
             // calculateHoursbutton1
@@ -323,7 +323,7 @@
             inputSunStartTimePicker.ShowUpDown = true;
             inputSunStartTimePicker.Size = new Size(58, 23);
             inputSunStartTimePicker.TabIndex = 4;
-            inputSunStartTimePicker.Value = new DateTime(2023, 12, 7, 7, 0, 0, 0);
+            inputSunStartTimePicker.Value = new DateTime(2023, 12, 7, 0, 0, 0, 0);
             // 
             // inputSunFinishTimePicker
             // 
@@ -334,7 +334,7 @@
             inputSunFinishTimePicker.ShowUpDown = true;
             inputSunFinishTimePicker.Size = new Size(58, 23);
             inputSunFinishTimePicker.TabIndex = 5;
-            inputSunFinishTimePicker.Value = new DateTime(2023, 12, 7, 12, 0, 0, 0);
+            inputSunFinishTimePicker.Value = new DateTime(2023, 12, 7, 0, 0, 0, 0);
             // 
             // labelSunStartTime
             // 
@@ -436,7 +436,7 @@
             inputSatStartTimePicker.ShowUpDown = true;
             inputSatStartTimePicker.Size = new Size(58, 23);
             inputSatStartTimePicker.TabIndex = 4;
-            inputSatStartTimePicker.Value = new DateTime(2023, 12, 7, 7, 0, 0, 0);
+            inputSatStartTimePicker.Value = new DateTime(2023, 12, 7, 0, 0, 0, 0);
             // 
             // inputSatFinishTimePicker
             // 
@@ -447,7 +447,7 @@
             inputSatFinishTimePicker.ShowUpDown = true;
             inputSatFinishTimePicker.Size = new Size(58, 23);
             inputSatFinishTimePicker.TabIndex = 5;
-            inputSatFinishTimePicker.Value = new DateTime(2023, 12, 7, 12, 0, 0, 0);
+            inputSatFinishTimePicker.Value = new DateTime(2023, 12, 7, 0, 0, 0, 0);
             // 
             // labelSatStartTime
             // 
@@ -549,7 +549,7 @@
             inputFriStartTimePicker.ShowUpDown = true;
             inputFriStartTimePicker.Size = new Size(58, 23);
             inputFriStartTimePicker.TabIndex = 4;
-            inputFriStartTimePicker.Value = new DateTime(2023, 12, 7, 7, 0, 0, 0);
+            inputFriStartTimePicker.Value = new DateTime(2023, 12, 7, 0, 0, 0, 0);
             // 
             // inputFriFinishTimePicker
             // 
@@ -560,7 +560,7 @@
             inputFriFinishTimePicker.ShowUpDown = true;
             inputFriFinishTimePicker.Size = new Size(58, 23);
             inputFriFinishTimePicker.TabIndex = 5;
-            inputFriFinishTimePicker.Value = new DateTime(2023, 12, 7, 12, 0, 0, 0);
+            inputFriFinishTimePicker.Value = new DateTime(2023, 12, 7, 0, 0, 0, 0);
             // 
             // labelFriStartTime
             // 
@@ -662,7 +662,7 @@
             inputThurStartTimePicker.ShowUpDown = true;
             inputThurStartTimePicker.Size = new Size(58, 23);
             inputThurStartTimePicker.TabIndex = 4;
-            inputThurStartTimePicker.Value = new DateTime(2023, 12, 7, 7, 0, 0, 0);
+            inputThurStartTimePicker.Value = new DateTime(2023, 12, 7, 0, 0, 0, 0);
             // 
             // inputThurFinishTimePicker
             // 
@@ -673,7 +673,7 @@
             inputThurFinishTimePicker.ShowUpDown = true;
             inputThurFinishTimePicker.Size = new Size(58, 23);
             inputThurFinishTimePicker.TabIndex = 5;
-            inputThurFinishTimePicker.Value = new DateTime(2023, 12, 7, 12, 0, 0, 0);
+            inputThurFinishTimePicker.Value = new DateTime(2023, 12, 7, 0, 0, 0, 0);
             // 
             // labelThurStartTime
             // 
@@ -775,7 +775,7 @@
             inputWedStartTimePicker.ShowUpDown = true;
             inputWedStartTimePicker.Size = new Size(58, 23);
             inputWedStartTimePicker.TabIndex = 4;
-            inputWedStartTimePicker.Value = new DateTime(2023, 12, 7, 7, 0, 0, 0);
+            inputWedStartTimePicker.Value = new DateTime(2023, 12, 7, 0, 0, 0, 0);
             // 
             // inputWedFinishTimePicker
             // 
@@ -786,7 +786,7 @@
             inputWedFinishTimePicker.ShowUpDown = true;
             inputWedFinishTimePicker.Size = new Size(58, 23);
             inputWedFinishTimePicker.TabIndex = 5;
-            inputWedFinishTimePicker.Value = new DateTime(2023, 12, 7, 12, 0, 0, 0);
+            inputWedFinishTimePicker.Value = new DateTime(2023, 12, 7, 0, 0, 0, 0);
             // 
             // labelWedStartTime
             // 
@@ -888,7 +888,7 @@
             inputTueStartTimePicker.ShowUpDown = true;
             inputTueStartTimePicker.Size = new Size(58, 23);
             inputTueStartTimePicker.TabIndex = 4;
-            inputTueStartTimePicker.Value = new DateTime(2023, 12, 7, 7, 0, 0, 0);
+            inputTueStartTimePicker.Value = new DateTime(2023, 12, 7, 0, 0, 0, 0);
             // 
             // inputTueFinishTimePicker
             // 
@@ -899,7 +899,7 @@
             inputTueFinishTimePicker.ShowUpDown = true;
             inputTueFinishTimePicker.Size = new Size(58, 23);
             inputTueFinishTimePicker.TabIndex = 5;
-            inputTueFinishTimePicker.Value = new DateTime(2023, 12, 7, 12, 0, 0, 0);
+            inputTueFinishTimePicker.Value = new DateTime(2023, 12, 7, 0, 0, 0, 0);
             // 
             // labelTueStartTime
             // 
@@ -998,7 +998,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1305, 277);
             Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "Form1";
+            ShowIcon = false;
             Text = "Coles Pay Calculator";
             payInformationgroupBox1.ResumeLayout(false);
             payInformationgroupBox1.PerformLayout();

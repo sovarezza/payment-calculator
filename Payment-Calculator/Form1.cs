@@ -26,10 +26,10 @@ namespace Payment_Calculator
         {
         }
 
-        private void do_Calculations(object sender, EventArgs e)
+        private void do_Calculations(object sender, EventArgs e)    //method that is run when "Calculate Hours" button is pressed
         {
             //ScheduledHours(inputMonStartTimePicker.Value.ToString(), inputMonFinishTimePicker.Value.ToString());
-            WeekDay monday = new WeekDay(inputMonStartTimePicker.Value, inputMonFinishTimePicker.Value);
+            //WeekDay monday = new WeekDay(inputMonStartTimePicker.Value, inputMonFinishTimePicker.Value);
         }
 
         private TimeSpan ScheduledHours(string startTime, string finishTime)

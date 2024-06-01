@@ -60,7 +60,7 @@
             inputSatStartTimePicker = new DateTimePicker();
             inputSatFinishTimePicker = new DateTimePicker();
             labelSatStartTime = new Label();
-            resulSatGrossPay = new Label();
+            resultSatGrossPay = new Label();
             labelSatFinishTime = new Label();
             labelSatHoursScheduled = new Label();
             labelSatGrossPay = new Label();
@@ -162,7 +162,7 @@
             inputMonFinishTimePicker.Size = new Size(58, 23);
             inputMonFinishTimePicker.TabIndex = 5;
             inputMonFinishTimePicker.Value = new DateTime(2023, 12, 7, 0, 0, 0, 0);
-            inputMonFinishTimePicker.ValueChanged += do_Calculations;
+            inputMonFinishTimePicker.ValueChanged += Mon_Calculations;
             // 
             // calculateHoursbutton1
             // 
@@ -172,7 +172,7 @@
             calculateHoursbutton1.TabIndex = 6;
             calculateHoursbutton1.Text = "Calculate Hours";
             calculateHoursbutton1.UseVisualStyleBackColor = true;
-            calculateHoursbutton1.Click += do_Calculations;
+            calculateHoursbutton1.Click += Do_Calculations;
             // 
             // payInformationgroupBox1
             // 
@@ -334,7 +334,7 @@
             inputSunFinishTimePicker.Size = new Size(58, 23);
             inputSunFinishTimePicker.TabIndex = 5;
             inputSunFinishTimePicker.Value = new DateTime(2023, 12, 7, 0, 0, 0, 0);
-            inputSunFinishTimePicker.ValueChanged += do_Calculations;
+            inputSunFinishTimePicker.ValueChanged += Sun_Calculations;
             // 
             // labelSunStartTime
             // 
@@ -413,7 +413,7 @@
             gbSatInfo.Controls.Add(inputSatStartTimePicker);
             gbSatInfo.Controls.Add(inputSatFinishTimePicker);
             gbSatInfo.Controls.Add(labelSatStartTime);
-            gbSatInfo.Controls.Add(resulSatGrossPay);
+            gbSatInfo.Controls.Add(resultSatGrossPay);
             gbSatInfo.Controls.Add(labelSatFinishTime);
             gbSatInfo.Controls.Add(labelSatHoursScheduled);
             gbSatInfo.Controls.Add(labelSatGrossPay);
@@ -448,7 +448,7 @@
             inputSatFinishTimePicker.Size = new Size(58, 23);
             inputSatFinishTimePicker.TabIndex = 5;
             inputSatFinishTimePicker.Value = new DateTime(2023, 12, 7, 0, 0, 0, 0);
-            inputSatFinishTimePicker.ValueChanged += do_Calculations;
+            inputSatFinishTimePicker.ValueChanged += Sat_Calculations;
             // 
             // labelSatStartTime
             // 
@@ -459,14 +459,14 @@
             labelSatStartTime.TabIndex = 1;
             labelSatStartTime.Text = "Start Time:";
             // 
-            // resulSatGrossPay
+            // resultSatGrossPay
             // 
-            resulSatGrossPay.AutoSize = true;
-            resulSatGrossPay.Location = new Point(109, 144);
-            resulSatGrossPay.Name = "resulSatGrossPay";
-            resulSatGrossPay.Size = new Size(34, 15);
-            resulSatGrossPay.TabIndex = 5;
-            resulSatGrossPay.Text = "$0.00";
+            resultSatGrossPay.AutoSize = true;
+            resultSatGrossPay.Location = new Point(109, 144);
+            resultSatGrossPay.Name = "resultSatGrossPay";
+            resultSatGrossPay.Size = new Size(34, 15);
+            resultSatGrossPay.TabIndex = 5;
+            resultSatGrossPay.Text = "$0.00";
             // 
             // labelSatFinishTime
             // 
@@ -562,7 +562,7 @@
             inputFriFinishTimePicker.Size = new Size(58, 23);
             inputFriFinishTimePicker.TabIndex = 5;
             inputFriFinishTimePicker.Value = new DateTime(2023, 12, 7, 0, 0, 0, 0);
-            inputFriFinishTimePicker.ValueChanged += do_Calculations;
+            inputFriFinishTimePicker.ValueChanged += Fri_Calculations;
             // 
             // labelFriStartTime
             // 
@@ -676,7 +676,7 @@
             inputThurFinishTimePicker.Size = new Size(58, 23);
             inputThurFinishTimePicker.TabIndex = 5;
             inputThurFinishTimePicker.Value = new DateTime(2023, 12, 7, 0, 0, 0, 0);
-            inputThurFinishTimePicker.ValueChanged += do_Calculations;
+            inputThurFinishTimePicker.ValueChanged += Thu_Calculations;
             // 
             // labelThurStartTime
             // 
@@ -790,7 +790,7 @@
             inputWedFinishTimePicker.Size = new Size(58, 23);
             inputWedFinishTimePicker.TabIndex = 5;
             inputWedFinishTimePicker.Value = new DateTime(2023, 12, 7, 0, 0, 0, 0);
-            inputWedFinishTimePicker.ValueChanged += do_Calculations;
+            inputWedFinishTimePicker.ValueChanged += Wed_Calculations;
             // 
             // labelWedStartTime
             // 
@@ -904,7 +904,7 @@
             inputTueFinishTimePicker.Size = new Size(58, 23);
             inputTueFinishTimePicker.TabIndex = 5;
             inputTueFinishTimePicker.Value = new DateTime(2023, 12, 7, 0, 0, 0, 0);
-            inputTueFinishTimePicker.ValueChanged += do_Calculations;
+            inputTueFinishTimePicker.ValueChanged += Tue_Calculations;
             // 
             // labelTueStartTime
             // 
@@ -1008,7 +1008,6 @@
             Name = "Form1";
             ShowIcon = false;
             Text = "Coles Pay Calculator";
-            Load += Form1_Load;
             payInformationgroupBox1.ResumeLayout(false);
             payInformationgroupBox1.PerformLayout();
             panel1.ResumeLayout(false);
@@ -1075,7 +1074,7 @@
         private DateTimePicker inputSatStartTimePicker;
         private DateTimePicker inputSatFinishTimePicker;
         private Label labelSatStartTime;
-        private Label resulSatGrossPay;
+        private Label resultSatGrossPay;
         private Label labelSatFinishTime;
         private Label labelSatHoursScheduled;
         private Label labelSatGrossPay;

@@ -8,15 +8,7 @@ namespace Payment_Calculator
 {
     internal static class Payment
     {
-        /*
-        //fields
-
-        //properties
-
-        //constructor
-
-        //methods
-        private static double CalculateGrossPay(TimeSpan duration, TimeSpan breaks)
+        public static double CalculateGrossPay(TimeSpan duration, TimeSpan breaks)
         {
             //convert duration into double
             double scheduledHours = duration.TotalHours;
@@ -38,7 +30,7 @@ namespace Payment_Calculator
             return grossPay;
         }
 
-        private static double CalculateTax(double grossPay)
+/*        public static double CalculateTax(double grossPay)
         {
             #region Tax Lookup Arrays   
             double[] taxLookupAmt = new double[9] { 0, 359, 438, 548, 721, 865, 1282, 2307, 3461 }; //ATO tax amounts to compare gross pay to
@@ -68,7 +60,7 @@ namespace Payment_Calculator
             return 0;
         }
 
-        private static double CalculateNetPay(double grossPay, double taxAmount)
+        public static double CalculateNetPay(double grossPay, double taxAmount)
         {
             double netPay = grossPay - taxAmount;
             resultNetPay.Text = netPay.ToString("C");

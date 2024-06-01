@@ -17,56 +17,80 @@ namespace Payment_Calculator
             InitializeComponent();
         }
 
-        public void Form1_Load(object sender, EventArgs e)
+
+
+        //combine all amounts of gross pay
+
+        //calculate tax by running method and return tax amount
+
+        //calculate net pay using tax amount
+
+        //display tax amount and net pay amount
+
+
+        //create an object for each day using the start time and finish time from each changed input
+        //have each object run the method (inside WEEKDAY class) calculating scheduled hours and breaks
+        //display scheduled hours and break
+        //send the calculated hours to PAYMENT class to calculate gross pay and display within each Day box
+        private void Mon_Calculations(object sender, EventArgs e)       //runs when MonFinishTimePicker is changed
         {
-            //create an object for each day using the start time and finish time from each changed input
-            Weekday monday      = new Weekday(inputMonStartTimePicker.Value, inputMonFinishTimePicker.Value);
-            Weekday tuesday     = new Weekday(inputTueStartTimePicker.Value, inputTueFinishTimePicker.Value);
-            Weekday wednesday   = new Weekday(inputWedStartTimePicker.Value, inputWedFinishTimePicker.Value);
-            Weekday thursday    = new Weekday(inputThurStartTimePicker.Value, inputThurFinishTimePicker.Value);
-            Weekday friday      = new Weekday(inputFriStartTimePicker.Value, inputFriFinishTimePicker.Value);
-            Weekday saturday    = new Weekday(inputSatStartTimePicker.Value, inputSatFinishTimePicker.Value);
-            Weekday sunday      = new Weekday(inputSunStartTimePicker.Value, inputSunFinishTimePicker.Value);
-        }
-
-        private void do_Calculations(object sender, EventArgs e)    //method that is run when "Calculate Hours" button is pressed
-        {
-            //on click, check if there are any changes to all start and finish time boxes -- potentially add a checkbox to each day (will require minor redesign of gui)
-
-            //if there is an error, display a popup box preventing any calculations until rectified
-
-            //have each object run the method (inside WEEKDAY class) calculating scheduled hours and breaks
-
-            //display scheduled hours and break
+            Weekday monday = new Weekday(inputMonStartTimePicker.Value, inputMonFinishTimePicker.Value);
             resultMonHoursScheduled.Text = monday.Duration.ToString(@"hh\:mm");
             resultMonBreaks.Text = monday.Breaks.ToString(@"hh\:mm");
-            resultTueHoursScheduled.Text = tuesday.Duration.ToString(@"hh\:mm");
-            resultTueBreaks.Text = tuesday.Breaks.ToString(@"hh\:mm");
-            resultWedHoursScheduled.Text = wednesday.Duration.ToString(@"hh\:mm");
-            resultWedBreaks.Text = wednesday.Breaks.ToString(@"hh\:mm");
-            resultThurHoursScheduled.Text = thursday.Duration.ToString(@"hh\:mm");
-            resultThurBreaks.Text = thursday.Breaks.ToString(@"hh\:mm");
-            resultFriHoursScheduled.Text = friday.Duration.ToString(@"hh\:mm");
-            resultFriBreaks.Text = friday.Breaks.ToString(@"hh\:mm");
-            resultSatHoursScheduled.Text = saturday.Duration.ToString(@"hh\:mm");
-            resultSatBreaks.Text = saturday.Breaks.ToString(@"hh\:mm");
-            resultSunHoursScheduled.Text = sunday.Duration.ToString(@"hh\:mm");
-            resultSunBreaks.Text = sunday.Breaks.ToString(@"hh\:mm");
-
-            //send the calculated hours to PAYMENT class to calculate gross pay
-
-            //display the gross amount within each time box
-
-            //combine all amounts of gross pay and send to TAX class
-
-            //calculate tax by running method (within TAX class) and return tax amount
-
-            //calculate net pay (within PAYMENT class) using tax amount
-
-            //display tax amount and net pay amount
-
-
+            resultMonGrossPay.Text = Payment.CalculateGrossPay(monday.Duration, monday.Breaks).ToString("C");
         }
 
+        private void Tue_Calculations(object sender, EventArgs e)       //runs when TueFinishTimePicker is changed
+        {
+            Weekday tuesday = new Weekday(inputTueStartTimePicker.Value, inputTueFinishTimePicker.Value);
+            resultTueHoursScheduled.Text = tuesday.Duration.ToString(@"hh\:mm");
+            resultTueBreaks.Text = tuesday.Breaks.ToString(@"hh\:mm");
+            resultTueGrossPay.Text = Payment.CalculateGrossPay(tuesday.Duration, tuesday.Breaks).ToString("C");
+        }
+
+        private void Wed_Calculations(object sender, EventArgs e)
+        {
+            Weekday wednesday = new Weekday(inputWedStartTimePicker.Value, inputWedFinishTimePicker.Value);
+            resultWedHoursScheduled.Text = wednesday.Duration.ToString(@"hh\:mm");
+            resultWedBreaks.Text = wednesday.Breaks.ToString(@"hh\:mm");
+            resultWedGrossPay.Text = Payment.CalculateGrossPay(wednesday.Duration, wednesday.Breaks).ToString("C");
+        }
+
+        private void Thu_Calculations(object sender, EventArgs e)
+        {
+            Weekday thursday = new Weekday(inputThurStartTimePicker.Value, inputThurFinishTimePicker.Value);
+            resultThurHoursScheduled.Text = thursday.Duration.ToString(@"hh\:mm");
+            resultThurBreaks.Text = thursday.Breaks.ToString(@"hh\:mm");
+            resultThurGrossPay.Text = Payment.CalculateGrossPay(thursday.Duration, thursday.Breaks).ToString("C");
+        }
+
+        private void Fri_Calculations(object sender, EventArgs e)
+        {
+            Weekday friday = new Weekday(inputFriStartTimePicker.Value, inputFriFinishTimePicker.Value);
+            resultFriHoursScheduled.Text = friday.Duration.ToString(@"hh\:mm");
+            resultFriBreaks.Text = friday.Breaks.ToString(@"hh\:mm");
+            resultFriGrossPay.Text = Payment.CalculateGrossPay(friday.Duration, friday.Breaks).ToString("C");
+        }
+
+        private void Sat_Calculations(object sender, EventArgs e)
+        {
+            Weekday saturday = new Weekday(inputSatStartTimePicker.Value, inputSatFinishTimePicker.Value);
+            resultSatHoursScheduled.Text = saturday.Duration.ToString(@"hh\:mm");
+            resultSatBreaks.Text = saturday.Breaks.ToString(@"hh\:mm");
+            resultSatGrossPay.Text = Payment.CalculateGrossPay(saturday.Duration, saturday.Breaks).ToString("C");
+        }
+
+        private void Sun_Calculations(object sender, EventArgs e)
+        {
+            Weekday sunday = new Weekday(inputSunStartTimePicker.Value, inputSunFinishTimePicker.Value);
+            resultSunHoursScheduled.Text = sunday.Duration.ToString(@"hh\:mm");
+            resultSunBreaks.Text = sunday.Breaks.ToString(@"hh\:mm");
+            resultSunGrossPay.Text = Payment.CalculateGrossPay(sunday.Duration, sunday.Breaks).ToString("C");
+        }
+
+        private void Do_Calculations(object sender, EventArgs e)        //runs when Calculate Hours button is clicked
+        {
+
+        }
     }
 }

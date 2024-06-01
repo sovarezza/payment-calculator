@@ -13,6 +13,7 @@ namespace Payment_Calculator
         private DateTime endTime;
         private TimeSpan duration;
         private TimeSpan breaks;
+        private double grossPay;
 
         //properties
         public DateTime StartTime
@@ -39,6 +40,12 @@ namespace Payment_Calculator
             set => breaks = value;
         }
 
+        public double GrossPay
+        {
+            get => grossPay;
+            set => grossPay = value;
+        }
+
         //constructor
         public Weekday(DateTime startTime, DateTime finishTime)
         {
@@ -46,6 +53,7 @@ namespace Payment_Calculator
             this.endTime = finishTime;
             ScheduledHours(startTime, finishTime);
             CalculateBreak(duration);
+            CalculateGrossPay(duration, breaks);
         }
 
         //methods
@@ -81,6 +89,22 @@ namespace Payment_Calculator
                 breaksErrorMsg = true;
             }
             else { breaksErrorMsg = true; }
+        }
+
+        public void CalculateGrossPay(TimeSpan duration, TimeSpan breaks)
+        {
+            //convert duration into double
+            double scheduledHours = duration.TotalHours;
+
+            //convert breaks into double
+            double mealBreaks = breaks.TotalHours;
+
+            //subtract breaks from duration
+            double totalHours = scheduledHours - mealBreaks;
+
+            //multiply pay amount by hours worked for gross total
+            double payAmount = 25.27490;
+            grossPay = totalHours * payAmount;
         }
     }
 }

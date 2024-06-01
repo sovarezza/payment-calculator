@@ -8,27 +8,7 @@ namespace Payment_Calculator
 {
     internal static class Payment
     {
-        public static double CalculateGrossPay(TimeSpan duration, TimeSpan breaks)
-        {
-            //convert duration into double
-            double scheduledHours = duration.TotalHours;
-
-            //convert breaks into double
-            double mealBreaks = breaks.TotalHours;
-
-            //subtract breaks from duration
-            double totalHours = scheduledHours - mealBreaks;
-
-            //multiply pay amount by hours worked for gross total
-            double payAmount = 25.27490;
-            double grossPay = totalHours * payAmount;
-
-            //display gross amount
-
-
-            //return gross amount
-            return grossPay;
-        }
+        
 
 /*        public static double CalculateTax(double grossPay)
         {

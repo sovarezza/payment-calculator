@@ -20,13 +20,13 @@ namespace Payment_Calculator
         public void Form1_Load(object sender, EventArgs e)
         {
             //create an object for each day using the start time and finish time from each changed input
-            Weekday monday = new Weekday(inputMonStartTimePicker.Value, inputMonFinishTimePicker.Value);
-            Weekday tuesday = new Weekday(inputTueStartTimePicker.Value, inputTueFinishTimePicker.Value);
-            Weekday wednesday = new Weekday(inputWedStartTimePicker.Value, inputWedFinishTimePicker.Value);
-            Weekday thursday = new Weekday(inputThurStartTimePicker.Value, inputThurFinishTimePicker.Value);
-            Weekday friday = new Weekday(inputFriStartTimePicker.Value, inputFriFinishTimePicker.Value);
-            Weekday saturday = new Weekday(inputSatStartTimePicker.Value, inputSatFinishTimePicker.Value);
-            Weekday sunday = new Weekday(inputSunStartTimePicker.Value, inputSunFinishTimePicker.Value);
+            Weekday monday      = new Weekday(inputMonStartTimePicker.Value, inputMonFinishTimePicker.Value);
+            Weekday tuesday     = new Weekday(inputTueStartTimePicker.Value, inputTueFinishTimePicker.Value);
+            Weekday wednesday   = new Weekday(inputWedStartTimePicker.Value, inputWedFinishTimePicker.Value);
+            Weekday thursday    = new Weekday(inputThurStartTimePicker.Value, inputThurFinishTimePicker.Value);
+            Weekday friday      = new Weekday(inputFriStartTimePicker.Value, inputFriFinishTimePicker.Value);
+            Weekday saturday    = new Weekday(inputSatStartTimePicker.Value, inputSatFinishTimePicker.Value);
+            Weekday sunday      = new Weekday(inputSunStartTimePicker.Value, inputSunFinishTimePicker.Value);
         }
 
         private void do_Calculations(object sender, EventArgs e)    //method that is run when "Calculate Hours" button is pressed

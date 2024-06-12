@@ -149,7 +149,7 @@
             inputMonStartTimePicker.Name = "inputMonStartTimePicker";
             inputMonStartTimePicker.ShowUpDown = true;
             inputMonStartTimePicker.Size = new Size(58, 23);
-            inputMonStartTimePicker.TabIndex = 4;
+            inputMonStartTimePicker.TabIndex = 1;
             inputMonStartTimePicker.Value = new DateTime(2023, 12, 7, 0, 0, 0, 0);
             // 
             // inputMonFinishTimePicker
@@ -160,7 +160,7 @@
             inputMonFinishTimePicker.Name = "inputMonFinishTimePicker";
             inputMonFinishTimePicker.ShowUpDown = true;
             inputMonFinishTimePicker.Size = new Size(58, 23);
-            inputMonFinishTimePicker.TabIndex = 5;
+            inputMonFinishTimePicker.TabIndex = 2;
             inputMonFinishTimePicker.Value = new DateTime(2023, 12, 7, 0, 0, 0, 0);
             inputMonFinishTimePicker.ValueChanged += Mon_Calculations;
             // 
@@ -169,7 +169,7 @@
             calculateHoursbutton1.Location = new Point(164, 243);
             calculateHoursbutton1.Name = "calculateHoursbutton1";
             calculateHoursbutton1.Size = new Size(101, 23);
-            calculateHoursbutton1.TabIndex = 6;
+            calculateHoursbutton1.TabIndex = 15;
             calculateHoursbutton1.Text = "Calculate Hours";
             calculateHoursbutton1.UseVisualStyleBackColor = true;
             calculateHoursbutton1.Click += Do_Calculations;
@@ -321,7 +321,7 @@
             inputSunStartTimePicker.Name = "inputSunStartTimePicker";
             inputSunStartTimePicker.ShowUpDown = true;
             inputSunStartTimePicker.Size = new Size(58, 23);
-            inputSunStartTimePicker.TabIndex = 4;
+            inputSunStartTimePicker.TabIndex = 13;
             inputSunStartTimePicker.Value = new DateTime(2023, 12, 7, 0, 0, 0, 0);
             // 
             // inputSunFinishTimePicker
@@ -332,7 +332,7 @@
             inputSunFinishTimePicker.Name = "inputSunFinishTimePicker";
             inputSunFinishTimePicker.ShowUpDown = true;
             inputSunFinishTimePicker.Size = new Size(58, 23);
-            inputSunFinishTimePicker.TabIndex = 5;
+            inputSunFinishTimePicker.TabIndex = 14;
             inputSunFinishTimePicker.Value = new DateTime(2023, 12, 7, 0, 0, 0, 0);
             inputSunFinishTimePicker.ValueChanged += Sun_Calculations;
             // 
@@ -435,7 +435,7 @@
             inputSatStartTimePicker.Name = "inputSatStartTimePicker";
             inputSatStartTimePicker.ShowUpDown = true;
             inputSatStartTimePicker.Size = new Size(58, 23);
-            inputSatStartTimePicker.TabIndex = 4;
+            inputSatStartTimePicker.TabIndex = 11;
             inputSatStartTimePicker.Value = new DateTime(2023, 12, 7, 0, 0, 0, 0);
             // 
             // inputSatFinishTimePicker
@@ -446,7 +446,7 @@
             inputSatFinishTimePicker.Name = "inputSatFinishTimePicker";
             inputSatFinishTimePicker.ShowUpDown = true;
             inputSatFinishTimePicker.Size = new Size(58, 23);
-            inputSatFinishTimePicker.TabIndex = 5;
+            inputSatFinishTimePicker.TabIndex = 12;
             inputSatFinishTimePicker.Value = new DateTime(2023, 12, 7, 0, 0, 0, 0);
             inputSatFinishTimePicker.ValueChanged += Sat_Calculations;
             // 
@@ -549,7 +549,7 @@
             inputFriStartTimePicker.Name = "inputFriStartTimePicker";
             inputFriStartTimePicker.ShowUpDown = true;
             inputFriStartTimePicker.Size = new Size(58, 23);
-            inputFriStartTimePicker.TabIndex = 4;
+            inputFriStartTimePicker.TabIndex = 9;
             inputFriStartTimePicker.Value = new DateTime(2023, 12, 7, 0, 0, 0, 0);
             // 
             // inputFriFinishTimePicker
@@ -560,7 +560,7 @@
             inputFriFinishTimePicker.Name = "inputFriFinishTimePicker";
             inputFriFinishTimePicker.ShowUpDown = true;
             inputFriFinishTimePicker.Size = new Size(58, 23);
-            inputFriFinishTimePicker.TabIndex = 5;
+            inputFriFinishTimePicker.TabIndex = 10;
             inputFriFinishTimePicker.Value = new DateTime(2023, 12, 7, 0, 0, 0, 0);
             inputFriFinishTimePicker.ValueChanged += Fri_Calculations;
             // 
@@ -663,7 +663,7 @@
             inputThurStartTimePicker.Name = "inputThurStartTimePicker";
             inputThurStartTimePicker.ShowUpDown = true;
             inputThurStartTimePicker.Size = new Size(58, 23);
-            inputThurStartTimePicker.TabIndex = 4;
+            inputThurStartTimePicker.TabIndex = 7;
             inputThurStartTimePicker.Value = new DateTime(2023, 12, 7, 0, 0, 0, 0);
             // 
             // inputThurFinishTimePicker
@@ -674,7 +674,7 @@
             inputThurFinishTimePicker.Name = "inputThurFinishTimePicker";
             inputThurFinishTimePicker.ShowUpDown = true;
             inputThurFinishTimePicker.Size = new Size(58, 23);
-            inputThurFinishTimePicker.TabIndex = 5;
+            inputThurFinishTimePicker.TabIndex = 8;
             inputThurFinishTimePicker.Value = new DateTime(2023, 12, 7, 0, 0, 0, 0);
             inputThurFinishTimePicker.ValueChanged += Thu_Calculations;
             // 
@@ -777,7 +777,7 @@
             inputWedStartTimePicker.Name = "inputWedStartTimePicker";
             inputWedStartTimePicker.ShowUpDown = true;
             inputWedStartTimePicker.Size = new Size(58, 23);
-            inputWedStartTimePicker.TabIndex = 4;
+            inputWedStartTimePicker.TabIndex = 5;
             inputWedStartTimePicker.Value = new DateTime(2023, 12, 7, 0, 0, 0, 0);
             // 
             // inputWedFinishTimePicker
@@ -788,7 +788,7 @@
             inputWedFinishTimePicker.Name = "inputWedFinishTimePicker";
             inputWedFinishTimePicker.ShowUpDown = true;
             inputWedFinishTimePicker.Size = new Size(58, 23);
-            inputWedFinishTimePicker.TabIndex = 5;
+            inputWedFinishTimePicker.TabIndex = 6;
             inputWedFinishTimePicker.Value = new DateTime(2023, 12, 7, 0, 0, 0, 0);
             inputWedFinishTimePicker.ValueChanged += Wed_Calculations;
             // 
@@ -891,7 +891,7 @@
             inputTueStartTimePicker.Name = "inputTueStartTimePicker";
             inputTueStartTimePicker.ShowUpDown = true;
             inputTueStartTimePicker.Size = new Size(58, 23);
-            inputTueStartTimePicker.TabIndex = 4;
+            inputTueStartTimePicker.TabIndex = 3;
             inputTueStartTimePicker.Value = new DateTime(2023, 12, 7, 0, 0, 0, 0);
             // 
             // inputTueFinishTimePicker
@@ -902,7 +902,7 @@
             inputTueFinishTimePicker.Name = "inputTueFinishTimePicker";
             inputTueFinishTimePicker.ShowUpDown = true;
             inputTueFinishTimePicker.Size = new Size(58, 23);
-            inputTueFinishTimePicker.TabIndex = 5;
+            inputTueFinishTimePicker.TabIndex = 4;
             inputTueFinishTimePicker.Value = new DateTime(2023, 12, 7, 0, 0, 0, 0);
             inputTueFinishTimePicker.ValueChanged += Tue_Calculations;
             // 

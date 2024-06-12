@@ -17,7 +17,7 @@ namespace Payment_Calculator
             InitializeComponent();
         }
 
-        double combinedGrossPay;
+        double combinedGrossPay, oldGrossPay = 0, oldTaxAmount = 0, oldNetPay = 0;
 
         private void Mon_Calculations(object sender, EventArgs e)                                                   //runs when MonFinishTimePicker is changed
         {
@@ -84,18 +84,29 @@ namespace Payment_Calculator
 
         private void Do_Calculations(object sender, EventArgs e)                                                    //runs when Calculate Hours button is clicked
         {
-            // Calculate tax
-            double taxAmount = Payment.CalculateTax(combinedGrossPay);
+            //check if combined gross pay == old gross pay
+            if (combinedGrossPay != oldGrossPay)            //if there is a change, calculate net pay and tax amounts 
+            {
+                // Calculate tax
+                double taxAmount = Payment.CalculateTax(combinedGrossPay);
 
-            // Calculate net pay
-            double netPay = Payment.CalculateNetPay(combinedGrossPay, taxAmount);
+                // Calculate net pay
+                double netPay = Payment.CalculateNetPay(combinedGrossPay, taxAmount);
 
-            // Display tax amount and net pay amount
-            resultTaxAmount.Text = taxAmount.ToString("C");
-            resultNetPay.Text = netPay.ToString("C");
+                // Display tax amount and net pay amount
+                resultTaxAmount.Text = taxAmount.ToString("C");
+                resultNetPay.Text = netPay.ToString("C");
 
-            // Reset combinedGrossPay for future calculations
-            combinedGrossPay = 0;
+                oldGrossPay = combinedGrossPay;
+                oldTaxAmount = taxAmount;
+                oldNetPay = netPay;
+                //combinedGrossPay = 0;
+            }
+            else                                            //if there's no change, display old net pay and tax amounts
+            {
+                resultTaxAmount.Text = oldTaxAmount.ToString("C");
+                resultNetPay.Text = oldNetPay.ToString("C");
+            }
         }
     }
 }

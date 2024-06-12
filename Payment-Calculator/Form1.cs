@@ -17,12 +17,15 @@ namespace Payment_Calculator
             InitializeComponent();
         }
 
+        double combinedGrossPay;
+
         private void Mon_Calculations(object sender, EventArgs e)                                                   //runs when MonFinishTimePicker is changed
         {
             Weekday monday = new Weekday(inputMonStartTimePicker.Value, inputMonFinishTimePicker.Value);            //create object, use start and finish times to populate fields/properties
             resultMonHoursScheduled.Text = monday.Duration.ToString(@"hh\:mm");                                     //display scheduled hours duration 
             resultMonBreaks.Text = monday.Breaks.ToString(@"hh\:mm");                                               //display unpaid meal breaks
             resultMonGrossPay.Text = monday.GrossPay.ToString("C");                                                 //display gross pay (scheduled hours minus unpaid meal breaks)
+            combinedGrossPay += monday.GrossPay;
         }
 
         private void Tue_Calculations(object sender, EventArgs e)                                                   //runs when TueFinishTimePicker is changed
@@ -31,6 +34,7 @@ namespace Payment_Calculator
             resultTueHoursScheduled.Text = tuesday.Duration.ToString(@"hh\:mm");
             resultTueBreaks.Text = tuesday.Breaks.ToString(@"hh\:mm");
             resultTueGrossPay.Text = tuesday.GrossPay.ToString("C");
+            combinedGrossPay += tuesday.GrossPay;
         }
 
         private void Wed_Calculations(object sender, EventArgs e)
@@ -39,6 +43,7 @@ namespace Payment_Calculator
             resultWedHoursScheduled.Text = wednesday.Duration.ToString(@"hh\:mm");
             resultWedBreaks.Text = wednesday.Breaks.ToString(@"hh\:mm");
             resultWedGrossPay.Text = wednesday.GrossPay.ToString("C");
+            combinedGrossPay += wednesday.GrossPay;
         }
 
         private void Thu_Calculations(object sender, EventArgs e)
@@ -47,6 +52,7 @@ namespace Payment_Calculator
             resultThurHoursScheduled.Text = thursday.Duration.ToString(@"hh\:mm");
             resultThurBreaks.Text = thursday.Breaks.ToString(@"hh\:mm");
             resultThurGrossPay.Text = thursday.GrossPay.ToString("C");
+            combinedGrossPay += thursday.GrossPay;
         }
 
         private void Fri_Calculations(object sender, EventArgs e)
@@ -55,6 +61,7 @@ namespace Payment_Calculator
             resultFriHoursScheduled.Text = friday.Duration.ToString(@"hh\:mm");
             resultFriBreaks.Text = friday.Breaks.ToString(@"hh\:mm");
             resultFriGrossPay.Text = friday.GrossPay.ToString("C");
+            combinedGrossPay += friday.GrossPay;
         }
 
         private void Sat_Calculations(object sender, EventArgs e)
@@ -63,6 +70,7 @@ namespace Payment_Calculator
             resultSatHoursScheduled.Text = saturday.Duration.ToString(@"hh\:mm");
             resultSatBreaks.Text = saturday.Breaks.ToString(@"hh\:mm");
             resultSatGrossPay.Text = saturday.GrossPay.ToString("C");
+            combinedGrossPay += saturday.GrossPay;
         }
 
         private void Sun_Calculations(object sender, EventArgs e)
@@ -71,18 +79,23 @@ namespace Payment_Calculator
             resultSunHoursScheduled.Text = sunday.Duration.ToString(@"hh\:mm");
             resultSunBreaks.Text = sunday.Breaks.ToString(@"hh\:mm");
             resultSunGrossPay.Text = sunday.GrossPay.ToString("C");
+            combinedGrossPay += sunday.GrossPay;
         }
 
         private void Do_Calculations(object sender, EventArgs e)                                                    //runs when Calculate Hours button is clicked
         {
-            //combine all amounts of gross pay
+            // Calculate tax
+            double taxAmount = Payment.CalculateTax(combinedGrossPay);
 
-            //calculate tax by running method and return tax amount
+            // Calculate net pay
+            double netPay = Payment.CalculateNetPay(combinedGrossPay, taxAmount);
 
-            //calculate net pay using tax amount
+            // Display tax amount and net pay amount
+            resultTaxAmount.Text = taxAmount.ToString("C");
+            resultNetPay.Text = netPay.ToString("C");
 
-            //display tax amount and net pay amount
-
+            // Reset combinedGrossPay for future calculations
+            combinedGrossPay = 0;
         }
     }
 }

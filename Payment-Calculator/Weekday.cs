@@ -1,110 +1,49 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Payment_Calculator
 {
     internal class Weekday
     {
-        //fields
-        private DateTime startTime;
-        private DateTime endTime;
-        private TimeSpan duration;
-        private TimeSpan breaks;
-        private double grossPay;
+        public DateTime StartTime { get; set; }
+        public DateTime EndTime { get; set; }
+        public TimeSpan Duration { get; private set; }
+        public TimeSpan Breaks { get; private set; }
+        public double GrossPay { get; private set; }
 
-        //properties
-        public DateTime StartTime
-        {
-            get => startTime; 
-            set => startTime = value;
-        }
-
-        public DateTime EndTime
-        {
-            get => endTime;
-            set => endTime = value;
-        }
-
-        public TimeSpan Duration
-        {
-            get => duration;
-            set => duration = value;
-        }
-
-        public TimeSpan Breaks
-        {
-            get => breaks;
-            set => breaks = value;
-        }
-
-        public double GrossPay
-        {
-            get => grossPay;
-            set => grossPay = value;
-        }
-
-        //constructor
         public Weekday(DateTime startTime, DateTime finishTime)
         {
-            this.startTime = startTime;
-            this.endTime = finishTime;
-            ScheduledHours(startTime, finishTime);
-            CalculateBreak(duration);
-            CalculateGrossPay(duration, breaks);
-        }
+            if (startTime >= finishTime)
+                throw new ArgumentException("Start time must be before finish time.");
 
-        //methods
-        private TimeSpan ScheduledHours(DateTime start, DateTime end)
-        {
-            duration = end - start;
-            return duration;
+            StartTime = startTime;
+            EndTime = finishTime;
+            Duration = EndTime - StartTime;
+
+            CalculateBreak(Duration);
+            CalculateGrossPay(Duration, Breaks);
         }
 
         private void CalculateBreak(TimeSpan duration)
         {
-            //find break times
-            bool breaksErrorMsg = false;
-
-            if (duration.Hours <= 5)
+            if (duration.TotalMinutes >= 315 && duration.TotalMinutes < 600)
             {
-                if (duration.Minutes < 15) { breaks = TimeSpan.Zero; }
-                else { breaks = TimeSpan.FromMinutes(30); }
+                Breaks = TimeSpan.FromMinutes(30);
             }
-            else if (duration.Hours < 10) { breaks = TimeSpan.FromMinutes(30); }
-            else if (duration.Hours == 10)
+            else if (duration.TotalMinutes >= 600)
             {
-                if (duration.Minutes < 15) { breaks = TimeSpan.FromMinutes(30); }
-                else { breaks = TimeSpan.FromHours(1); }
+                Breaks = TimeSpan.FromHours(1);
             }
-            else if (duration.Hours < 12) { breaks = TimeSpan.FromHours(1); }
-            else if (duration.Hours == 12 && duration.Minutes == 0)
+            else
             {
-                breaks = TimeSpan.FromHours(1);
+                Breaks = TimeSpan.Zero;
             }
-            else if (duration.Hours == 12 && duration.Minutes > 0)
-            {
-                breaksErrorMsg = true;
-            }
-            else { breaksErrorMsg = true; }
         }
 
-        public void CalculateGrossPay(TimeSpan duration, TimeSpan breaks)
+        private void CalculateGrossPay(TimeSpan duration, TimeSpan breaks)
         {
-            //convert duration into double
-            double scheduledHours = duration.TotalHours;
-
-            //convert breaks into double
-            double mealBreaks = breaks.TotalHours;
-
-            //subtract breaks from duration
-            double totalHours = scheduledHours - mealBreaks;
-
-            //multiply pay amount by hours worked for gross total
-            double payAmount = 25.27490;
-            grossPay = totalHours * payAmount;
+            double totalHours = duration.TotalHours - breaks.TotalHours;
+            double payRate = 25.27490;
+            GrossPay = totalHours * payRate;
         }
     }
 }
